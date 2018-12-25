@@ -23,8 +23,15 @@ import javax.sql.DataSource;
 @ConditionalOnProperty(prefix = "guns.muti-datasource", name = "open", havingValue = "false", matchIfMissing = true)
 @AutoConfigureAfter(DefaultPropertiesConfig.class)
 @EnableTransactionManagement
-@MapperScan(basePackages = {"com.duteliang.*.dao"})
+@MapperScan(basePackages = {"com.duteliang.*.repository.dao"})
 public class SingleDataSourceConfig {
+
+    private static int a = 0;
+
+    {
+        a++;
+        System.out.println("进入几次了？"+a);
+    }
 
     /**
      * 单数据源连接池配置

@@ -8,8 +8,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @author: zl
  * @Date: 2018-12-25 12:03
  */
-@SpringBootApplication
-//@EnableEurekaClient
+@SpringBootApplication(scanBasePackages = {"com.duteliang"})
+@EnableEurekaClient
 public class UserApplication {
 
 	public static void main(String[] args) {

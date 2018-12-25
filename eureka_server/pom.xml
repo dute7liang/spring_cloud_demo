@@ -6,7 +6,7 @@
         <groupId>com.duteliang</groupId>
         <artifactId>spring_cloud_demo</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>eureka_server</artifactId>
     <version>1.0.0</version>

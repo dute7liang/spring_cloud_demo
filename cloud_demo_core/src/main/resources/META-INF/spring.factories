@@ -1,4 +1,4 @@
 # AutoConfiguration
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.duteliang.core.config.DefaultPropertiesConfig,\
-com.duteliang.core.config.SingleDataSourceConfig
+com.duteliang.core.config.SingleDataSourceConfig,\
+com.duteliang.core.config.DefaultPropertiesConfig
