@@ -1,0 +1,4 @@
+# AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.duteliang.core.config.properties.DruidProperties,\
+com.duteliang.core.config.properties.MutiDataSourceProperties
