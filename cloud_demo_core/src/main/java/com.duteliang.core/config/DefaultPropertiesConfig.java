@@ -9,12 +9,12 @@ import org.springframework.context.annotation.PropertySource;
 /**
  * 默认的配置
  *
- * @author fengshuonan
- * @date 2018-01-07 12:33
+ * @author zl
+ * @date 2018-12-25 12:08
  */
 @Configuration
 @PropertySource("classpath:/default-config.properties")
-public class DefaultProperties {
+public class DefaultPropertiesConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")

@@ -5,11 +5,13 @@ import com.baomidou.mybatisplus.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.duteliang.core.config.properties.DruidProperties;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.sql.DataSource;
 
 /**
  * 多数据源配置
@@ -19,6 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @ConditionalOnProperty(prefix = "guns.muti-datasource", name = "open", havingValue = "false", matchIfMissing = true)
+@AutoConfigureAfter(DefaultPropertiesConfig.class)
 @EnableTransactionManagement
 @MapperScan(basePackages = {"com.duteliang.*.dao"})
 public class SingleDataSourceConfig {
@@ -27,7 +30,7 @@ public class SingleDataSourceConfig {
      * 单数据源连接池配置
      */
     @Bean
-    public DruidDataSource dataSource(DruidProperties druidProperties) {
+    public DataSource dataSource(DruidProperties druidProperties) {
         DruidDataSource dataSource = new DruidDataSource();
         druidProperties.config(dataSource);
         return dataSource;

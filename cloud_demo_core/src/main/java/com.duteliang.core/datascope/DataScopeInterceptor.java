@@ -2,7 +2,6 @@ package com.duteliang.core.datascope;
 
 
 import com.baomidou.mybatisplus.toolkit.PluginUtils;
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;
