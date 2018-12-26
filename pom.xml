@@ -6,6 +6,8 @@
         <module>eureka_client</module>
         <module>cloud_demo_core</module>
         <module>user</module>
+        <module>product</module>
+        <module>cloud_client_api</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -64,6 +66,11 @@
             <dependency>
                 <groupId>com.duteliang</groupId>
                 <artifactId>cloud_demo_core</artifactId>
+                <version>${com.duteliang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.duteliang</groupId>
+                <artifactId>cloud_client_api</artifactId>
                 <version>${com.duteliang.version}</version>
             </dependency>
             <!-- 通用 -->

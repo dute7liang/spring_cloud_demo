@@ -21,7 +21,6 @@ import javax.sql.DataSource;
  */
 @Configuration
 @ConditionalOnProperty(prefix = "guns.muti-datasource", name = "open", havingValue = "false", matchIfMissing = true)
-@AutoConfigureAfter(DefaultPropertiesConfig.class)
 @EnableTransactionManagement
 @MapperScan(basePackages = {"com.duteliang.*.repository.dao"})
 public class SingleDataSourceConfig {

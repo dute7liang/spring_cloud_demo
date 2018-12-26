@@ -8,22 +8,12 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>user</artifactId>
-    <description>用户模块</description>
-
-
+    <artifactId>cloud_client_api</artifactId>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>com.duteliang</groupId>
             <artifactId>cloud_demo_core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.duteliang</groupId>
-            <artifactId>cloud_client_api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -43,5 +33,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
