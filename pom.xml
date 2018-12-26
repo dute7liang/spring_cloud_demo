@@ -8,6 +8,8 @@
         <module>user</module>
         <module>product</module>
         <module>cloud_client_api</module>
+        <module>config_server</module>
+        <module>geteway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

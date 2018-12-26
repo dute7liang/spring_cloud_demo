@@ -8,33 +8,17 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>product</artifactId>
-    <description>产品模块</description>
+
+    <artifactId>config_server</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.duteliang</groupId>
-            <artifactId>cloud_demo_core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.duteliang</groupId>
-            <artifactId>cloud_client_api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
     </dependencies>
 
@@ -46,5 +30,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

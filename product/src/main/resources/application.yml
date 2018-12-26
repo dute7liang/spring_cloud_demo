@@ -6,6 +6,11 @@ spring:
     username: dubbo_test
     password: Aa123456789!
     filters: slf4j,wall,mergeStat
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:

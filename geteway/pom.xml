@@ -8,14 +8,14 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>product</artifactId>
-    <description>产品模块</description>
+
+    <artifactId>geteway</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.duteliang</groupId>
-            <artifactId>cloud_demo_core</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.duteliang</groupId>-->
+            <!--<artifactId>cloud_demo_core</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.duteliang</groupId>
             <artifactId>cloud_client_api</artifactId>
@@ -30,11 +30,17 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
         </dependency>
     </dependencies>
 
@@ -46,5 +52,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

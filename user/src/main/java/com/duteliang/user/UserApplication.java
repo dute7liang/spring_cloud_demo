@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication(scanBasePackages = {"com.duteliang"})
 @EnableEurekaClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"com.duteliang.client"})
 public class UserApplication {
 
 	public static void main(String[] args) {
