@@ -56,5 +56,9 @@ zuul:
   # 全局设置排除敏感字段（默认有三个：cookie..）
   sensitive-headers:
 
+#ribbon:
+#  ReadTimeout: 5000
+#  SocketTimeout: 5000
+
 
 ##    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用

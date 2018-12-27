@@ -17,6 +17,11 @@ public class ProductController {
 
 	@GetMapping("getProductMessage")
 	public String getMessage(){
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return productService.getMessage();
 	}
 

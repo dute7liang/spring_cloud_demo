@@ -17,13 +17,18 @@ spring:
         myStreamQueue:
           group: user
           content-type: application/json
-
-
+  zipkin:
+    base-url: http://localhost:9411/
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1  # 发送的百分比
+#ribbon
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
 mybatis-plus:
   mapper-locations: classpath*:com/duteliang/**/mapping/*.xml
   typeAliasesPackage: com.duteliang.*.repository.model
@@ -37,3 +42,12 @@ mybatis-plus:
     lazyLoadingEnabled: true # 延时加载的开关
     multipleResultSetsEnabled: true # 开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 3000
