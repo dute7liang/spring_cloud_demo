@@ -1,5 +1,6 @@
 package com.duteliang.product.rabbit_receive;
 
+import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.impl.AMQImpl;
 import com.rabbitmq.http.client.domain.ExchangeType;
 import lombok.extern.slf4j.Slf4j;
@@ -8,10 +9,12 @@ import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -38,8 +41,10 @@ public class RabbitReceiveTest {
 			exchange = @Exchange(value = "myExchange",type = ExchangeTypes.TOPIC),
 			key = "rabbit.name"
 	))
-	public void receiveString(@Payload String string, AMQImpl.Channel cannel,
-			  @Headers Map<String,Object> map){
+	public void receiveString(@Payload String string, Channel cannel,
+			  @Headers Map<String,Object> map) throws IOException {
+//		Long deliveryTag = (Long)map.get(AmqpHeaders.DELIVERY_TAG);
+//		cannel.basicAck(deliveryTag, false);
 		log.info("收到的消息：{}", string);
 	}
 
