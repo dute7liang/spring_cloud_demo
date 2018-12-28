@@ -17,6 +17,11 @@ public class ProductController {
 
 	@GetMapping("getProductMessage")
 	public String getMessage(){
+		return productService.getMessage();
+	}
+
+	@GetMapping("getMessage2M")
+	public String getMessage2M(){
 		try {
 			Thread.sleep(1500);
 		} catch (InterruptedException e) {
@@ -24,5 +29,6 @@ public class ProductController {
 		}
 		return productService.getMessage();
 	}
+
 
 }

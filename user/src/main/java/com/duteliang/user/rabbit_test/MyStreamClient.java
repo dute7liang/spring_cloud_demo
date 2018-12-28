@@ -18,13 +18,13 @@ public interface MyStreamClient {
 //	SubscribableChannel input();
 
 
-	@Output(MyStreamClient.OUTPUT)
-	MessageChannel output();
+//	@Output(MyStreamClient.OUTPUT)
+//	MessageChannel output();
 
 
 	String OUTPUT2 = "myQueue";
 
-	@Output(MyStreamClient.OUTPUT2)
-	MessageChannel output2();
+//	@Output(MyStreamClient.OUTPUT2)
+//	MessageChannel output2();
 
 }

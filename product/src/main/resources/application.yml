@@ -17,7 +17,7 @@ spring:
       type: web
   sleuth:
     sampler:
-      probability: 1  # 发送的百分比
+      probability: 1  # 采样率
 eureka:
   client:
     service-url:

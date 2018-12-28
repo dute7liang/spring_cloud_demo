@@ -31,14 +31,14 @@ public class RabbitControllerTest {
 	}
 
 
-	@Autowired
+	@Autowired(required = false)
 	private MyStreamClient streamClient;
 
 	@GetMapping(value = "streamSend")
 	public void streamSend(){
 		String message = "当前时间="+new Date();
 		Message<String> build = MessageBuilder.withPayload(message).build();
-		streamClient.output().send(build);
+//		streamClient.output().send(build);
 	}
 
 }

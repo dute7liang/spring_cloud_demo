@@ -18,7 +18,25 @@ public class RabbitSendTest {
 
 
 	public void sendQueue(){
-		amqpTemplate.convertAndSend("myQueue", "我发送的消息"+new Date());
+		String message = "我发送的消息"+new Date();
+		RabbitModel rabbitModel = new RabbitModel();
+		rabbitModel.setAge(25);
+		rabbitModel.setDate(new Date());
+		rabbitModel.setName("zl");
+		rabbitModel.setDou(200000.00);
+
+		// 发送消息到队列 myQueue，exchange 为默认的 exchange
+//		amqpTemplate.convertAndSend("myQueue", "我发送的消息"+new Date());
+//		amqpTemplate.convertAndSend("myQueue", rabbitModel);
+
+		/**
+		 * 发送消息到exchange  docker, routingKey为指定的数据
+		 *  比如 rabbit.*  rabbit.#
+ 		 */
+		amqpTemplate.convertAndSend("myExchange", "rabbit.name", message);
+
+
+
 	}
 
 
