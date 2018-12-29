@@ -27,14 +27,14 @@ public class RabbitReceiveTest {
 	 * RoutingKey 可以使用占位符 比如 rabbit.*  rabbit.#  只有topic类型才支持占位符
 	 *
 	 */
-	@RabbitListener(bindings = @QueueBinding(
-			value = @Queue("myQueue"),
-			exchange = @Exchange(value = "myExchange",type = ExchangeTypes.TOPIC),
-			key = "rabbit.name"
-	))
-	public void receiveString(String string){
-		log.info("收到的消息：{}", string);
-	}
+//	@RabbitListener(bindings = @QueueBinding(
+//			value = @Queue("myQueue"),
+//			exchange = @Exchange(value = "myExchange",type = ExchangeTypes.TOPIC),
+//			key = "rabbit.name"
+//	))
+//	public void receiveString(String string){
+//		log.info("收到的消息：{}", string);
+//	}
 
 
 //	@RabbitListener(bindings = @QueueBinding(

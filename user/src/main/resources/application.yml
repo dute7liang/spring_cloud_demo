@@ -13,11 +13,11 @@ spring:
     password: guest
 #    connection-timeout:
 #    virtual-host: /
-#    listener:
-#      simple:
+    listener:
+      simple:
 #        concurrency: 5
 #        max-concurrency: 10
-#        acknowledge-mode: auto
+        acknowledge-mode: auto
 #        prefetch: 1 # 限流用
 
   cloud:

@@ -5,10 +5,7 @@ import com.rabbitmq.client.impl.AMQImpl;
 import com.rabbitmq.http.client.domain.ExchangeType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.ExchangeTypes;
-import org.springframework.amqp.rabbit.annotation.Exchange;
-import org.springframework.amqp.rabbit.annotation.Queue;
-import org.springframework.amqp.rabbit.annotation.QueueBinding;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -39,12 +36,16 @@ public class RabbitReceiveTest {
 	@RabbitListener(bindings = @QueueBinding(
 			value = @Queue("myQueue"),
 			exchange = @Exchange(value = "myExchange",type = ExchangeTypes.TOPIC),
-			key = "rabbit.name"
+			key = "rabbit.name",
+			arguments = {
+				@Argument(name = "key",value = "value"),
+				@Argument(name = "key1",value = "value1")
+			}
 	))
 	public void receiveString(@Payload String string, Channel cannel,
 			  @Headers Map<String,Object> map) throws IOException {
-//		Long deliveryTag = (Long)map.get(AmqpHeaders.DELIVERY_TAG);
-//		cannel.basicAck(deliveryTag, false);
+		Long deliveryTag = (Long)map.get(AmqpHeaders.DELIVERY_TAG);
+		cannel.basicAck(deliveryTag, false);
 		log.info("收到的消息：{}", string);
 	}
 
@@ -52,9 +53,16 @@ public class RabbitReceiveTest {
 	@RabbitListener(bindings = @QueueBinding(
 			value = @Queue("myQueue"),
 			exchange = @Exchange(value = "myExchange",type = ExchangeTypes.TOPIC),
-			key = "rabbit.name"
+			key = "rabbit.name",
+			arguments = {
+				@Argument(name = "key",value = "value"),
+				@Argument(name = "key3",value = "value3")
+			}
 	))
-	public void receiveString2(String string){
+	public void receiveString2(@Payload String string, Channel cannel,
+			   @Headers Map<String,Object> map) throws IOException {
+		Long deliveryTag = (Long)map.get(AmqpHeaders.DELIVERY_TAG);
+		cannel.basicAck(deliveryTag, false);
 		log.info("收到的消息：{}", string);
 	}
 

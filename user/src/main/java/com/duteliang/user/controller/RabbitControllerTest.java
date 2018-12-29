@@ -21,8 +21,8 @@ public class RabbitControllerTest {
 	private RabbitSendTest rabbitSendTest;
 
 	@GetMapping(value = "sendRabbitString")
-	public void sendRabbitString(){
-		rabbitSendTest.sendQueue();
+	public void sendRabbitString(Integer i){
+		rabbitSendTest.sendQueue(i);
 	}
 
 	@GetMapping(value = "sendRabbitExchangeString")
