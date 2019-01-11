@@ -59,6 +59,4 @@ zuul:
 #ribbon:
 #  ReadTimeout: 5000
 #  SocketTimeout: 5000
-
-
 ##    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
